@@ -6,6 +6,51 @@
   <script src="bundle.js" async></script>
 </head>
 <body>
-  <h1 data-controller="example"></h1>
+  <div data-controller="clipboard">
+  	<input type="text" value="1234" data-clipboard-target="source" readonly>
+  	<button data-action="click->clipboard#copy">Copy</button>
+  </div>
+
+  <div data-controller="slideshow" data-slide-index-value='1'>
+	  <div data-slideshow-target="slide" data-index="0" class="slide current">1</div>
+	  <div data-slideshow-target="slide" data-index="1" class="slide">2</div>
+	  <div data-slideshow-target="slide" data-index="2" class="slide">3</div>
+	  <div data-slideshow-target="slide" data-index="3" class="slide">4</div>
+	  <div data-slideshow-target="slide" data-index="4" class="slide">5</div>
+
+		<button data-action="click->slideshow#previous">Prev</button>
+	  <button data-action="click->slideshow#next">Next</button>
+	</div>
+
+	<div data-controller="styling" data-styling-primary-class="btn-primary">
+		<button class="btn" data-action="click->styling#addClass" data-styling-target='button'>Primary</button>
+		<button class="btn" data-action="click->styling#toggleClass" data-styling-target='toggleButton'>Toggle</button>
+	</div>
+
+	<div data-controller="content-loader" data-content-loader-url-value="messages.html"></div>
+
+	<div id="calculator" data-controller="simple-calculator">
+		<div class="result">
+			<span class="previous" data-simple-calculator-target="prev">1</span>
+			<div class="current" data-simple-calculator-target="current">2</div>
+		</div>
+		<div class="btn-group-operation">
+			<button class="btn" data-action="click->simple-calculator#operation" data-simple-calculator-target="operation">AC</button>
+			<button class="btn" data-action="click->simple-calculator#operation" data-simple-calculator-target="operation">+</button>
+			<button class="btn" data-action="click->simple-calculator#operation" data-simple-calculator-target="operation">-</button>
+			<button class="btn" data-action="click->simple-calculator#operation" data-simple-calculator-target="operation">/</button>
+		</div>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">1</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">2</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">3</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">4</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">5</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">6</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">7</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">8</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">9</button>
+		<button class="btn" data-action="click->simple-calculator#number" data-simple-calculator-target="number">0</button>
+		<button class="btn" data-action="click->simple-calculator#equal" data-simple-calculator-target="equal">=</button>
+	</div>
 </body>
 </html>
